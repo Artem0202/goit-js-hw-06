@@ -14,6 +14,11 @@ const customer = {
   setDiscount(value) {
     if (value >= 0 && value <= 1) {
       this.discount = value;
+    } else {
+      this.discount = false;
+      console.error(
+        'Знижка не була встановлена через те, що значення вийшло за межі допустимого значення'
+      );
     }
   },
   getOrders() {
