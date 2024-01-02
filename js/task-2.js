@@ -16,7 +16,11 @@ class Storage {
 
   removeItem(itemToRemove) {
     const indexItemRemove = this.#items.indexOf(itemToRemove);
-    this.#items.splice(indexItemRemove, 1);
+    if (indexItemRemove !== -1) {
+      this.#items.splice(indexItemRemove, 1);
+    } else {
+      return 'Даного елементу не знайдено.';
+    }
   }
 }
 
