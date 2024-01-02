@@ -12,7 +12,9 @@ const customer = {
     return this.discount;
   },
   setDiscount(value) {
-    this.discount = value;
+    if (value >= 0 && value <= 1) {
+      this.discount = value;
+    }
   },
   getOrders() {
     return this.orders;
